@@ -1,0 +1,13 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json . 
+#copied package.json because of node modules volume - referenced in container
+RUN npm install
+
+COPY . . 
+#will need this for production code
+#can remove copy . . because the app directory is mapped to directory on local machine
+
+CMD ["npm", "run", "start"]
