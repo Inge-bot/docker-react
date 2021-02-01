@@ -6,7 +6,7 @@ services:
 #executed before our tests run
 before_install:
   - docker build -t imationschek/docker-react -f Dockerfile.dev .
-
-#need to make sure that test suite exits at end -> for npm need an extra command for this
+ 
 script:
   - docker run -e CI=true imationschek/docker-react npm run test
+#need to make sure that test suite exits at end -> for npm need an extra command for this
