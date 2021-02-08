@@ -15,4 +15,4 @@ RUN ["npm", "run", "start"]
 FROM nginx
 EXPOSE 80 
 #tells Elastic beanstalk which port to expose
-COPY /app/build usr/share/nginx/html
+COPY --from=0 /app/build usr/share/nginx/html
