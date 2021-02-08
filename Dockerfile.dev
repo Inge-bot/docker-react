@@ -11,8 +11,3 @@ COPY . .
 #can remove copy . . because the app directory is mapped to directory on local machine
 
 RUN ["npm", "run", "start"]
-
-FROM nginx
-EXPOSE 80 
-#tells Elastic beanstalk which port to expose
-COPY --from=0 /app/build usr/share/nginx/html
