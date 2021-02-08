@@ -10,3 +10,15 @@ before_install:
 script:
   - docker run -e CI=true imationschek/docker-react npm run test -- --coverage
 #need to make sure that test suite exits at end -> for npm need an extra command for this
+
+deploy:
+  provider: elasticbeanstalk
+  region: "eu-west-1"
+  app: "docker-react"
+  env: "Dockerreact-env"
+  bucket_name: "elasticbeanstalk-eu-west-1-414651232202"
+  bucket_path: "docker-react"
+  on: 
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
