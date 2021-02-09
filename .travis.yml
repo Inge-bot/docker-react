@@ -5,7 +5,7 @@ services:
 
 #executed before our tests run
 before_install:
-  - docker build -t imationschek/docker-react -f Dockerfile.dev .
+  - docker build -t imationschek/docker-react .
  
 script:
   - docker run -e CI=true imationschek/docker-react npm run test -- --coverage
