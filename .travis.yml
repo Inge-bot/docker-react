@@ -8,7 +8,7 @@ before_install:
   - docker build -t imationschek/docker-react .
  
  script:
-   - docker run -e CI=true imationschek/docker-react npm run test -- --coverage
+  - docker run -e CI=true imationschek/docker-react npm run test -- --coverage
 #need to make sure that test suite exits at end -> for npm need an extra command for this
 
 deploy:
