@@ -7,9 +7,10 @@ services:
 before_install:
   - docker build -t imationschek/docker-react .
  
-script:
-  - docker run -e CI=true imationschek/docker-react npm run test -- --coverage
+# script:
+  # - docker run -e CI=true imationschek/docker-react npm run test -- --coverage
 #need to make sure that test suite exits at end -> for npm need an extra command for this
+#npm not found error message - might be a problem with the EC2 instance - needs to be upgraded to medium
 
 deploy:
   provider: elasticbeanstalk
